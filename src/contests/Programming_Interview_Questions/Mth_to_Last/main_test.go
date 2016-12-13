@@ -6,7 +6,7 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-	ll := LinkedList{}
+	ll := List(new(LinkedList))
 	count := 20
 	for i := 0; i < count; i++ {
 		ll.Add(i)
@@ -23,7 +23,7 @@ func TestAdd(t *testing.T) {
 }
 
 func TestRemove(t *testing.T) {
-	ll := LinkedList{}
+	ll := List(new(LinkedList))
 	count := 20
 	for i := 0; i < count; i++ {
 		ll.Add(i)
@@ -45,12 +45,12 @@ func TestRemove(t *testing.T) {
 }
 
 func TestLinkedList_Empty(t *testing.T) {
-	ll := LinkedList{}
+	ll := List(new(LinkedList))
 	assert.True(t, ll.Empty(), "LinkedList not empty")
 }
 
 func TestLinkedList_Not_Empty(t *testing.T) {
-	ll := LinkedList{}
+	ll := List(new(LinkedList))
 	ll.Add(4)
 	ll.Add(5)
 	ll.Add(6)
@@ -59,7 +59,7 @@ func TestLinkedList_Not_Empty(t *testing.T) {
 }
 
 func TestLinkedList_Size(t *testing.T) {
-	ll := LinkedList{}
+	ll := List(new(LinkedList))
 	count := 6
 	for i := 0; i < count; i++ {
 		ll.Add(i)
@@ -74,11 +74,27 @@ func TestLinkedList_Size(t *testing.T) {
 }
 
 func TestLinkedList_Remove_Empty(t *testing.T) {
-	ll := LinkedList{}
+	ll := List(new(LinkedList))
 	_, err := ll.Remove(0)
 	if err == nil {
 		assert.Fail(t, "No error thrown")
 	}
 
 	assert.Equal(t, 0, ll.Size(), "LinkedList not empty")
+}
+
+func TestLinkedList_ProblemTest (t *testing.T) {
+	index := 4
+	vals := []int{10, 200, 3, 40000, 5}
+	ll := List(new(LinkedList))
+	for _, num := range vals{
+		ll.Add(num)
+	}
+
+	val, err := ll.Get(ll.Size() - index)
+	if err != nil {
+		assert.Fail(t, "Unable to Get index: ", index)
+	} else {
+		assert.Equal(t, 200, val, "Wrong value for test case: ", val)
+	}
 }

@@ -28,7 +28,7 @@ func main() {
 	index, _ := strconv.Atoi(strings.TrimSpace(s))
 
 	s, _ = reader.ReadString('\n')
-	ll := LinkedList{}
+	ll := List(new(LinkedList))
 	for _, element := range strings.Split(s, " ") {
 		number, _ := strconv.Atoi(strings.TrimSpace(element))
 		ll.Add(number)
@@ -49,11 +49,11 @@ type Node struct {
 }
 
 type List interface {
-	add(value int);
-	remove(index int) (bool, error);
-	get(index int) (int, error);
-	empty() bool;
-	size() int;
+	Add(value int);
+	Remove(index int) (int, error);
+	Get(index int) (int, error);
+	Empty() bool;
+	Size() int;
 }
 
 type LinkedList struct {
