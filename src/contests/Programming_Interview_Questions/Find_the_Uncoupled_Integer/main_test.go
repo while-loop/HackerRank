@@ -16,11 +16,11 @@ func TestUncoupled2(t *testing.T) {
 }
 
 func TestUncoupled3(t *testing.T) {
-	in := "85, 1, 3, 2 4, 5, 1, 2, 3, 4, 5"
+	in := "85, 1, 3, 2, 4, 5, 1, 2, 3, 4, 5"
 	assert.Equal(t, 85, uncoupled(in), "Wrong Answer")
 }
 
 func TestCoupled(t *testing.T) {
 	in := "2, 4, 4, 6, 8, 8, 2, 6"
-	assert.Equal(t, 0, uncoupled(in), "Wrong Answer")
+	assert.Equal(t, 0, uncoupled(in), "Test not coupled")
 }
