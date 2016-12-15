@@ -1,7 +1,7 @@
-# HackerRank
-Solutions to some HackRank problems
+# Competitive Programming
+Solutions to some problems
 
 
 * Code in Java/Python/Golang
 
-* Tests for almost all problems
+* Tests created for needed problem sets i.e. data structs
