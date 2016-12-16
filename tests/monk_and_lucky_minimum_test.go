@@ -5,9 +5,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"bufio"
 	"strings"
+	"./../hackerearth"
 )
 
-func TestCase0(t *testing.T) {
+func TestMonkCase0(t *testing.T) {
 	input := `10
 5
 27 84 50 18 70
@@ -33,5 +34,5 @@ func TestCase0(t *testing.T) {
 	exp := "Lucky\nUnlucky\nUnlucky\nLucky\nUnlucky\nLucky\nLucky\nLucky\nUnlucky\nUnlucky\n"
 
 	scan := bufio.NewScanner(strings.NewReader(input))
-	assert.Equal(t, exp, solve(scan), "FeelsUnluckyMan")
+	assert.Equal(t, exp, main.SolveMonk(scan), "FeelsUnluckyMan")
 }

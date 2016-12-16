@@ -12,11 +12,11 @@ import (
 /**
   * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/monk-and-lucky-minimum-3/
   */
-func tmp() {
-	fmt.Print(solve(bufio.NewScanner(os.Stdin)))
+func main() {
+	fmt.Print(SolveMonk(bufio.NewScanner(os.Stdin)))
 }
 
-func solve(scanner *bufio.Scanner) string {
+func SolveMonk(scanner *bufio.Scanner) string {
 	var buffer bytes.Buffer
 
 	scanner.Split(bufio.ScanWords)
