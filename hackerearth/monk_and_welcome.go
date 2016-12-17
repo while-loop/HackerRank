@@ -11,7 +11,7 @@ import (
 /**
   * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/monk-and-welcome-problem/
   */
-func main() {
+func sdf() {
 	reader := bufio.NewReader(os.Stdin)
 
 	tmp, _ := reader.ReadString('\n')

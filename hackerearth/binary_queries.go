@@ -11,7 +11,7 @@ import (
 /**
   * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/range-query-2/description/
   */
-func main() {
+func ge5g() {
 	fmt.Print(BinaryQueries(bufio.NewScanner(os.Stdin)))
 }
 func BinaryQueries(scanner *bufio.Scanner) string {

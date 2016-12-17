@@ -12,7 +12,7 @@ import (
 /**
   * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/monk-and-lucky-minimum-3/
   */
-func main() {
+func asfd() {
 	fmt.Print(SolveMonk(bufio.NewScanner(os.Stdin)))
 }
 
