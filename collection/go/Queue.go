@@ -3,56 +3,54 @@ package collection
 import "errors"
 
 /**
-	Kinda generic Stack
+	Kinda generic Queue
  */
-type Stack struct {
+type Queue struct {
 	elements []interface{}
-	size     int
 }
 
-func (this *Stack) Empty() bool {
-	return this.size == 0
+func (this *Queue) Empty() bool {
+	return len(this.elements) == 0
 }
 
-func (this *Stack) Peek() (interface{}, error) {
+func (this *Queue) Peek() (interface{}, error) {
 	if this.Empty() {
-		return nil, errors.New("Empty Stack")
+		return nil, errors.New("Empty Queue")
 	} else {
 		return this.elements[0], nil
 	}
 }
 
-func (this *Stack) Pop() (interface{}, error) {
+func (this *Queue) Pop() (interface{}, error) {
 	if this.Empty() {
-		return nil, errors.New("Empty Stack")
+		return nil, errors.New("Empty Queue")
 	} else {
-		this.size-- // decrement before return because of 0-index
-		ele := this.elements[this.size]
-		this.elements[this.size] = nil
-		return ele, nil
+		res := this.elements[0]
+		this.elements[0] = nil
+		this.elements = this.elements[1:]
+		return res, nil
 	}
 }
 
-func (this *Stack) Push(val interface{}) {
+func (this *Queue) Push(val interface{}) {
 	this.elements = append(this.elements, val)
-	this.size++
 }
 
-func (this *Stack) Size() int {
-	return this.size
+func (this *Queue) Size() int {
+	return len(this.elements)
 }
 
 
 // https://groups.google.com/forum/#!topic/golang-nuts/UyKree3BCQ0
-type StringStack struct {
-	Stack
+type StringQueue struct {
+	Queue
 }
 
-func (s *StringStack) Push(n string) {
-	s.Stack.Push(n)
+func (s *StringQueue) Push(n string) {
+	s.Queue.Push(n)
 }
-func (s *StringStack) Pop() (string, error){
-	tmp, err := s.Stack.Pop()
+func (s *StringQueue) Pop() (string, error) {
+	tmp, err := s.Queue.Pop()
 	var val string
 	if tmp != nil {
 		val = tmp.(string)
@@ -61,15 +59,15 @@ func (s *StringStack) Pop() (string, error){
 }
 
 // https://groups.google.com/forum/#!topic/golang-nuts/UyKree3BCQ0
-type IntStack struct {
-	Stack
+type IntQueue struct {
+	Queue
 }
 
-func (s *IntStack) Push(n int) {
-	s.Stack.Push(n)
+func (s *IntQueue) Push(n int) {
+	s.Queue.Push(n)
 }
-func (s *IntStack) Pop() (int, error){
-	tmp, err := s.Stack.Pop()
+func (s *IntQueue) Pop() (int, error) {
+	tmp, err := s.Queue.Pop()
 	var val int
 	if tmp != nil {
 		val = tmp.(int)
