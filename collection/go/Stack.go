@@ -7,11 +7,10 @@ import "errors"
  */
 type Stack struct {
 	elements []interface{}
-	size     int
 }
 
 func (this *Stack) Empty() bool {
-	return this.size == 0
+	return len(this.elements) == 0
 }
 
 func (this *Stack) Peek() (interface{}, error) {
@@ -26,20 +25,20 @@ func (this *Stack) Pop() (interface{}, error) {
 	if this.Empty() {
 		return nil, errors.New("Empty Stack")
 	} else {
-		this.size-- // decrement before return because of 0-index
-		ele := this.elements[this.size]
-		this.elements[this.size] = nil
-		return ele, nil
+		size := len(this.elements) - 1
+		res := this.elements[size]
+		this.elements[size] = nil
+		this.elements = this.elements[:size]
+		return res, nil
 	}
 }
 
 func (this *Stack) Push(val interface{}) {
 	this.elements = append(this.elements, val)
-	this.size++
 }
 
 func (this *Stack) Size() int {
-	return this.size
+	return len(this.elements)
 }
 
 
@@ -51,7 +50,7 @@ type StringStack struct {
 func (s *StringStack) Push(n string) {
 	s.Stack.Push(n)
 }
-func (s *StringStack) Pop() (string, error){
+func (s *StringStack) Pop() (string, error) {
 	tmp, err := s.Stack.Pop()
 	var val string
 	if tmp != nil {
@@ -68,7 +67,7 @@ type IntStack struct {
 func (s *IntStack) Push(n int) {
 	s.Stack.Push(n)
 }
-func (s *IntStack) Pop() (int, error){
+func (s *IntStack) Pop() (int, error) {
 	tmp, err := s.Stack.Pop()
 	var val int
 	if tmp != nil {
