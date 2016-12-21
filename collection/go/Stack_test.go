@@ -1,9 +1,8 @@
-package main
+package collection
 
 import (
 	"testing"
 	"github.com/stretchr/testify/assert"
-	. "./../collection/go"
 )
 
 func TestStack_EmptyStackShouldBeZero(t *testing.T) {
@@ -133,5 +132,37 @@ func TestStack_Resize(t *testing.T) {
 	assert.Nil(t, err, "Error when popping")
 	assert.Equal(t, byte(32), val, "Popped wrong value")
 	assert.Equal(t, 32, stack.Size(), "Wrong size when popped")
+}
+
+func TestStack_Peek(t *testing.T) {
+	stack := Stack{}
+	for i := 0; i < 33; i++ {
+		stack.Push(byte(i))
+	}
+
+	peeked, err := stack.Peek()
+	assert.NoError(t, err)
+	assert.Equal(t, byte(32), peeked)
+
+	peeked, err = stack.Peek()
+	assert.NoError(t, err )
+	assert.Equal(t, byte(32), peeked)
+
+	popped, err := stack.Pop()
+	assert.NoError(t, err)
+	assert.Equal(t, byte(32), popped)
+
+	peeked, err = stack.Peek()
+	assert.NoError(t, err)
+	assert.Equal(t, byte(31), peeked)
+
+	stack.Push(byte(55))
+
+	peeked, err = stack.Peek()
+	assert.NoError(t, err)
+	assert.Equal(t, byte(55), peeked)
+	assert.Equal(t, 33, stack.Size(), "Wrong size when popped")
+
+
 }
 

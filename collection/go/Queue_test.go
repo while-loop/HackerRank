@@ -1,9 +1,8 @@
-package main
+package collection
 
 import (
 	"testing"
 	"github.com/stretchr/testify/assert"
-	. "./../collection/go"
 )
 
 func TestQueue_EmptyQueueShouldBeZero(t *testing.T) {

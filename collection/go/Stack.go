@@ -17,7 +17,7 @@ func (this *Stack) Peek() (interface{}, error) {
 	if this.Empty() {
 		return nil, errors.New("Empty Stack")
 	} else {
-		return this.elements[0], nil
+		return this.elements[len(this.elements) - 1], nil
 	}
 }
 
