@@ -13,7 +13,7 @@ import (
   * Wishing you Godspeed
   * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/speed-7/
   */
-func main() {
+func main12() {
 	fmt.Print(SolveSpeed(bufio.NewScanner(os.Stdin)))
 }
 
