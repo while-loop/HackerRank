@@ -10,7 +10,7 @@ import (
 /**
   * https://open.kattis.com/contests/e3hoii/problems/maptiles2
   */
-func main231561() {
+func main() {
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanWords)
 
