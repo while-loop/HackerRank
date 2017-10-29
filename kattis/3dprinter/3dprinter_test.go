@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -16,7 +15,6 @@ func TestCases(t *testing.T) {
 	}
 
 	for _, tc := range tcs {
-		fmt.Println("sd")
 		assert.Equal(t, tc.days, solve(tc.statuses))
 	}
 }
