@@ -1,10 +1,10 @@
 package main
 
 import (
-	"testing"
-	"github.com/stretchr/testify/assert"
 	"bufio"
+	"github.com/stretchr/testify/assert"
 	"strings"
+	"testing"
 )
 
 func TestMonkCase0(t *testing.T) {

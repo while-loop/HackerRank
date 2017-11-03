@@ -1,8 +1,8 @@
 package main
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestCase1(t *testing.T) {
@@ -22,7 +22,7 @@ func TestCase2(t *testing.T) {
 func TestCase3(t *testing.T) {
 	n := 22
 	exp := []string{"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz",
-	"16", "17", "Fizz", "19", "Buzz", "Fizz", "22"}
+		"16", "17", "Fizz", "19", "Buzz", "Fizz", "22"}
 	arr := FiZzBuZz(n)
 	assert.Equal(t, exp, arr, "Incorrect fizzbuzz output", n)
 }

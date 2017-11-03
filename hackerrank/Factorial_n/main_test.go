@@ -1,9 +1,9 @@
 package main
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
 	"math/big"
+	"testing"
 )
 
 type Pair struct {

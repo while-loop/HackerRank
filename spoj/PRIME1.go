@@ -20,11 +20,12 @@ Output:
 
 3
 5
- */
+*/
 func main() {
 	//test()
 	//return
-	var t int; fmt.Scanf("%d", &t);
+	var t int
+	fmt.Scanf("%d", &t)
 	var num1, num2 int
 	for i := 0; i < t; i++ {
 		fmt.Scanf("%d", &num1)
@@ -44,7 +45,7 @@ var primes = map[int]bool{}
 func prime(n int) bool {
 	if n == 2 {
 		return true
-	} else if n % 2 == 0 || n == 1 {
+	} else if n%2 == 0 || n == 1 {
 		return false
 	}
 
@@ -56,7 +57,7 @@ func prime(n int) bool {
 	primes[n] = true
 	sqrtn := math.Sqrt(float64(n))
 	for i := 3; float64(i) <= sqrtn; i += 2 {
-		if n % i == 0 || n % (i + 2) == 0 {
+		if n%i == 0 || n%(i+2) == 0 {
 			primes[n] = false
 			break
 		}
@@ -70,7 +71,7 @@ func test() {
 	for i := 1; i <= MAX; i++ {
 		mine := prime(i)
 		yours := big.NewInt(int64(i)).ProbablyPrime(4)
-		if i % 10000 == 0 {
+		if i%10000 == 0 {
 			fmt.Println(i)
 		}
 		if mine != yours {

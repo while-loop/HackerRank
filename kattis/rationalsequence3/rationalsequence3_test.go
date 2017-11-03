@@ -1,9 +1,9 @@
 package main
 
 import (
-	"testing"
 	"fmt"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestCases(t *testing.T) {
@@ -20,7 +20,7 @@ func TestCases(t *testing.T) {
 	for _, tc := range tcs {
 		t.Run(tc.name, func(inner *testing.T) {
 			p, q := Solve(tc.n)
-			str:=fmt.Sprintf("%v", tc)
+			str := fmt.Sprintf("%v", tc)
 			assert.Equal(inner, int(tc.p), int(p), str)
 			assert.Equal(inner, int(tc.q), int(q), str)
 		})

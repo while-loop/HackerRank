@@ -1,15 +1,15 @@
 /**
-  * XOR each number to cancel out (0x00) for paired numbers
-  */
+ * XOR each number to cancel out (0x00) for paired numbers
+ */
 
 package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
-	"fmt"
 )
 
 /**
@@ -18,7 +18,7 @@ import (
 
 1, 2, 3, 4, 5, 99, 1, 2, 3, 4, 5
 99
- */
+*/
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 

@@ -2,28 +2,28 @@ package main
 
 import (
 	"bufio"
+	"bytes"
+	"fmt"
 	"os"
 	"strconv"
-	"fmt"
-	"bytes"
 )
 
 /**
-  * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/unique-subarrays/
-  */
+ * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/unique-subarrays/
+ */
 func main32() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(bufio.ScanWords)
 	var buffer bytes.Buffer
 
-	scanner.Scan();
+	scanner.Scan()
 	tests, _ := strconv.Atoi(scanner.Text())
 	for i := 0; i < tests; i++ {
-		scanner.Scan();
+		scanner.Scan()
 		nums, _ := strconv.Atoi(scanner.Text())
 		arr := make([]int, nums)
 		for j := 0; j < nums; j++ {
-			scanner.Scan();
+			scanner.Scan()
 			arr[j], _ = strconv.Atoi(scanner.Text())
 		}
 

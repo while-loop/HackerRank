@@ -2,17 +2,17 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"strconv"
 	"fmt"
 	"math"
+	"os"
+	"strconv"
 )
 
 var in = bufio.NewScanner(os.Stdin)
 
 /**
-  * https://open.kattis.com/problems/rationalsequence3
-  */
+ * https://open.kattis.com/problems/rationalsequence3
+ */
 func main() {
 	in.Split(bufio.ScanWords)
 

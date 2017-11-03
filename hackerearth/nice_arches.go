@@ -1,17 +1,17 @@
 package main
 
 import (
+	"../collection/go"
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
-	"fmt"
-	"../collection/go"
 	"strings"
 )
 
 /**
-  * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/nice-arches-1/
-  */
+ * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/nice-arches-1/
+ */
 func main3() {
 	// use Reader instead of Scanner cause scanner's max string length is 2^16, our max input len is 10^5
 	reader := bufio.NewReader(os.Stdin)
@@ -21,7 +21,7 @@ func main3() {
 	count := 0
 	for i := 0; i < tests; i++ {
 		word, _ := reader.ReadString('\n')
-		if (isBubbly(strings.TrimSpace(word))) {
+		if isBubbly(strings.TrimSpace(word)) {
 			count++
 		}
 	}
@@ -32,7 +32,7 @@ func main3() {
 func isBubbly(s string) bool {
 	stack := collection.Stack{}
 	for _, value := range s {
-		if (stack.Empty()) {
+		if stack.Empty() {
 			stack.Push(value)
 		} else {
 			peeked, _ := stack.Peek()

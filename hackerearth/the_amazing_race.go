@@ -2,26 +2,26 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
-	"fmt"
 )
 
 /**
-  * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/the-amazing-race-1/
-  */
+ * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/the-amazing-race-1/
+ */
 func main54() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(bufio.ScanWords)
 
-	scanner.Scan();
+	scanner.Scan()
 	tests, _ := strconv.Atoi(scanner.Text())
 	for i := 0; i < tests; i++ {
-		scanner.Scan();
+		scanner.Scan()
 		nums, _ := strconv.Atoi(scanner.Text())
 		vals := make([]int, nums)
 		for j := 0; j < nums; j++ {
-			scanner.Scan();
+			scanner.Scan()
 			vals[j], _ = strconv.Atoi(scanner.Text())
 		}
 		maxIdx := [2]int{-1, -1} // hold max index and max value of car
@@ -52,7 +52,7 @@ func MaxSight(arr []int, pos int) int {
 			}
 		}
 
-		if (pos + i) < arrLen && back && currHeight >= tmpHeight { // cars behind
+		if (pos+i) < arrLen && back && currHeight >= tmpHeight { // cars behind
 			count++
 			if tmpHeight >= currHeight && (pos != i) {
 				back = false
@@ -60,5 +60,5 @@ func MaxSight(arr []int, pos int) int {
 		}
 	}
 
-	return count * (pos+1)
+	return count * (pos + 1)
 }

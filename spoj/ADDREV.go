@@ -16,9 +16,10 @@ Sample output:
 34
 1998
 1
- */
+*/
 func main() {
-	var n int; fmt.Scanf("%d", &n);
+	var n int
+	fmt.Scanf("%d", &n)
 	var num1, num2 int
 	for i := 0; i < n; i++ {
 		fmt.Scanf("%d", &num1)

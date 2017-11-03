@@ -2,27 +2,27 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"strconv"
 	"fmt"
+	"os"
 	"sort"
+	"strconv"
 )
 
 var in = bufio.NewScanner(os.Stdin)
 
 /**
-  * https://open.kattis.com/contests/ze6qt6/problems/timebomb
-  */
+ * https://open.kattis.com/contests/ze6qt6/problems/timebomb
+ */
 func main() {
 	in.Split(bufio.ScanLines)
 
 	nums := make([][5][3]byte, 8)
 	for i := 0; i < 5; i++ {
 		line := NextLine()
-		for j, numIdx := 3, 0; j < len(line)+1; j, numIdx = j + 4, numIdx + 1 {
-			nums[numIdx][i][0] = line[j - 3]
-			nums[numIdx][i][1] = line[j - 2]
-			nums[numIdx][i][2] = line[j - 1]
+		for j, numIdx := 3, 0; j < len(line)+1; j, numIdx = j+4, numIdx+1 {
+			nums[numIdx][i][0] = line[j-3]
+			nums[numIdx][i][1] = line[j-2]
+			nums[numIdx][i][2] = line[j-1]
 		}
 	}
 

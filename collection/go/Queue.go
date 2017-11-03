@@ -3,8 +3,8 @@ package collection
 import "errors"
 
 /**
-	Kinda generic Queue
- */
+Kinda generic Queue
+*/
 type Queue struct {
 	elements []interface{}
 }
@@ -39,7 +39,6 @@ func (this *Queue) Push(val interface{}) {
 func (this *Queue) Size() int {
 	return len(this.elements)
 }
-
 
 // https://groups.google.com/forum/#!topic/golang-nuts/UyKree3BCQ0
 type StringQueue struct {

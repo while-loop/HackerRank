@@ -2,20 +2,21 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"fmt"
 	"bytes"
+	"fmt"
+	"os"
 	"strings"
 )
 
 /**
-  * https://open.kattis.com/contests/e3hoii/problems/anewalphabet
-  */
+ * https://open.kattis.com/contests/e3hoii/problems/anewalphabet
+ */
 func main54() {
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanLines)
 
-	in.Scan(); input := in.Text()
+	in.Scan()
+	input := in.Text()
 	fmt.Println(ConvAlphabet(input))
 }
 

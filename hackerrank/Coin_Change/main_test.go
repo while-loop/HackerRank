@@ -1,8 +1,8 @@
 package main
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 type Pair struct {
@@ -27,5 +27,3 @@ func TestMakeChange1(t *testing.T) {
 
 	assert.Equal(t, exp, MakeChange(N, M, Cs), "Incorrect change amount", N, M, Cs)
 }
-
-

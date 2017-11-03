@@ -2,14 +2,15 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
+	"os"
 )
 
 var in = bufio.NewScanner(os.Stdin)
+
 /**
-  * https://open.kattis.com/contests/ze6qt6/problems/npuzzle
-  */
+ * https://open.kattis.com/contests/ze6qt6/problems/npuzzle
+ */
 func main() {
 	in.Split(bufio.ScanBytes)
 

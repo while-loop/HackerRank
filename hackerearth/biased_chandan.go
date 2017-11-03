@@ -1,16 +1,16 @@
 package main
 
 import (
+	"../collection/go"
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
-	"fmt"
-	"../collection/go"
 )
 
 /**
-  * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/biased-chandan/
-  */
+ * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/biased-chandan/
+ */
 func cv() {
 	fmt.Print(SolveBias(bufio.NewScanner(os.Stdin)))
 }
@@ -18,11 +18,13 @@ func cv() {
 func SolveBias(scanner *bufio.Scanner) int {
 	scanner.Split(bufio.ScanWords)
 
-	scanner.Scan(); nums, _ := strconv.Atoi(scanner.Text())
+	scanner.Scan()
+	nums, _ := strconv.Atoi(scanner.Text())
 	stack := collection.Stack{}
 	var tmp int
 	for i := 0; i < nums; i++ {
-		scanner.Scan(); tmp, _ = strconv.Atoi(scanner.Text())
+		scanner.Scan()
+		tmp, _ = strconv.Atoi(scanner.Text())
 
 		if tmp == 0 {
 			stack.Pop()

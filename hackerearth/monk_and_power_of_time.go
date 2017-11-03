@@ -2,30 +2,33 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"fmt"
-	"strconv"
 	"errors"
+	"fmt"
+	"os"
+	"strconv"
 )
 
 /**
-  * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/monk-and-power-of-time/
-  */
+ * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/monk-and-power-of-time/
+ */
 func asd() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(bufio.ScanWords)
 
-	scanner.Scan(); n, _ := strconv.Atoi(scanner.Text())
+	scanner.Scan()
+	n, _ := strconv.Atoi(scanner.Text())
 	idealqueue := make([]int, n)
 	givenqueue := IntQueue{}
 
 	for i := 0; i < n; i++ {
-		scanner.Scan(); tmp, _ := strconv.Atoi(scanner.Text())
+		scanner.Scan()
+		tmp, _ := strconv.Atoi(scanner.Text())
 		givenqueue.Push(tmp)
 	}
 
 	for i := 0; i < n; i++ {
-		scanner.Scan(); idealqueue[i], _ = strconv.Atoi(scanner.Text())
+		scanner.Scan()
+		idealqueue[i], _ = strconv.Atoi(scanner.Text())
 	}
 
 	ttl := 0
@@ -43,10 +46,9 @@ func asd() {
 	fmt.Println(ttl)
 }
 
-
 /**
-	Kinda generic Queue
- */
+Kinda generic Queue
+*/
 type Queue struct {
 	elements []interface{}
 }
@@ -81,7 +83,6 @@ func (this *Queue) Push(val interface{}) {
 func (this *Queue) Size() int {
 	return len(this.elements)
 }
-
 
 // https://groups.google.com/forum/#!topic/golang-nuts/UyKree3BCQ0
 type StringQueue struct {

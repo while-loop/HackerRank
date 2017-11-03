@@ -1,8 +1,8 @@
 package main
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestAdd(t *testing.T) {
@@ -83,11 +83,11 @@ func TestLinkedList_Remove_Empty(t *testing.T) {
 	assert.Equal(t, 0, ll.Size(), "LinkedList not empty")
 }
 
-func TestLinkedList_ProblemTest (t *testing.T) {
+func TestLinkedList_ProblemTest(t *testing.T) {
 	index := 4
 	vals := []int{10, 200, 3, 40000, 5}
 	ll := List(new(LinkedList))
-	for _, num := range vals{
+	for _, num := range vals {
 		ll.Add(num)
 	}
 

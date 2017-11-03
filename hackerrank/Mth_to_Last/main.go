@@ -1,18 +1,18 @@
 /**
-  * Doubly LinkedList to solve problem. Keeps track of size in a variable and traverses from
-  * either the head or tail of the list depending position of the given index.
-  *
-  */
+ * Doubly LinkedList to solve problem. Keeps track of size in a variable and traverses from
+ * either the head or tail of the list depending position of the given index.
+ *
+ */
 
 package main
 
 import (
 	"bufio"
+	"errors"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
-	"errors"
-	"fmt"
 )
 
 /**
@@ -20,7 +20,7 @@ import (
 10 200 3 40000 5
 
 200
- */
+*/
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 
@@ -43,73 +43,73 @@ func main() {
 }
 
 type Node struct {
-	prev  *Node;
-	value int;
-	next  *Node;
+	prev  *Node
+	value int
+	next  *Node
 }
 
 type List interface {
-	Add(value int);
-	Remove(index int) (int, error);
-	Get(index int) (int, error);
-	Empty() bool;
-	Size() int;
+	Add(value int)
+	Remove(index int) (int, error)
+	Get(index int) (int, error)
+	Empty() bool
+	Size() int
 }
 
 type LinkedList struct {
-	head *Node;
-	tail *Node;
-	size int;
+	head *Node
+	tail *Node
+	size int
 }
 
 func (this *LinkedList) Add(value int) {
-	tmp := &Node{value:value, next:nil, prev:nil};
+	tmp := &Node{value: value, next: nil, prev: nil}
 	if this.head == nil {
-		this.head = tmp;
-		this.tail = tmp;
-		this.size = 0;
+		this.head = tmp
+		this.tail = tmp
+		this.size = 0
 	} else {
-		tmp.prev = this.tail; // assign previous in temp
-		this.tail.next = tmp; // assign next in tail
-		this.tail = tmp; // swap tail with temp
+		tmp.prev = this.tail // assign previous in temp
+		this.tail.next = tmp // assign next in tail
+		this.tail = tmp      // swap tail with temp
 	}
-	this.size++;
+	this.size++
 }
 
 func (this *LinkedList) Remove(index int) (int, error) {
-	tmp, err := this.getNode(index);
+	tmp, err := this.getNode(index)
 	if err != nil {
-		return -1, err;
+		return -1, err
 	} else {
-		ret := tmp.value;
+		ret := tmp.value
 		if tmp.prev == nil { // head
-			this.head = tmp.next;
+			this.head = tmp.next
 		} else { // non-head
-			tmp.prev.next = tmp.next;
+			tmp.prev.next = tmp.next
 		}
 
 		if tmp.next == nil { // tail
-			this.tail = tmp.prev;
+			this.tail = tmp.prev
 		} else { // non-tail
-			tmp.next.prev = tmp.prev;
+			tmp.next.prev = tmp.prev
 		}
 
-		tmp.next = nil;
-		tmp.prev = nil;
-		tmp = nil;
-		this.size--;
+		tmp.next = nil
+		tmp.prev = nil
+		tmp = nil
+		this.size--
 
-		return ret, nil;
+		return ret, nil
 	}
 }
 
 /**
-	Helper func to get a node at the given index.
-	Does error checking for size.
- */
+Helper func to get a node at the given index.
+Does error checking for size.
+*/
 func (this *LinkedList) getNode(index int) (*Node, error) {
 	if index < 0 || index >= this.size {
-		return nil, errors.New("Index must be greater than 0 and less than LinkedList size");
+		return nil, errors.New("Index must be greater than 0 and less than LinkedList size")
 	}
 
 	// if we get this far, there exists at least one object in the list
@@ -119,53 +119,53 @@ func (this *LinkedList) getNode(index int) (*Node, error) {
 	useHead := true
 	if (this.size - index) > (this.size / 2.0) {
 		// index is closer to head
-		tmp = this.head;
+		tmp = this.head
 	} else {
 		// index is closer to tail
-		tmp = this.tail;
-		index = this.size - index - 1;
+		tmp = this.tail
+		index = this.size - index - 1
 		useHead = false
 	}
 
 	for tmp != nil && 0 < index {
 		if useHead {
-			tmp = tmp.next;
+			tmp = tmp.next
 		} else {
-			tmp = tmp.prev;
+			tmp = tmp.prev
 		}
-		index--;
+		index--
 	}
 
 	if tmp == nil {
-		return nil, errors.New("Uh oh, less items in list than list.size dictates..");
+		return nil, errors.New("Uh oh, less items in list than list.size dictates..")
 	} else {
-		return tmp, nil;
+		return tmp, nil
 	}
 }
 
 func (this *LinkedList) Get(index int) (int, error) {
-	tmp, err := this.getNode(index);
+	tmp, err := this.getNode(index)
 	if err != nil {
-		return -1, err;
+		return -1, err
 	}
 
-	return tmp.value, nil;
+	return tmp.value, nil
 
 }
 
-func (this *LinkedList)  Print() {
-	tmp := this.head;
+func (this *LinkedList) Print() {
+	tmp := this.head
 	for tmp != nil {
 		fmt.Printf("%d, ", tmp.value)
-		tmp = tmp.next;
+		tmp = tmp.next
 	}
 	fmt.Println()
 }
 
 func (this *LinkedList) Empty() bool {
-	return this.size == 0;
+	return this.size == 0
 }
 
 func (this *LinkedList) Size() int {
-	return this.size;
+	return this.size
 }

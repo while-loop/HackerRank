@@ -1,14 +1,14 @@
 /**
-  * Recursive Fibonacci w/ memoization
-  *
-  */
+ * Recursive Fibonacci w/ memoization
+ *
+ */
 
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"math/big"
-	"bufio"
 	"os"
 	"strconv"
 	"strings"
@@ -20,14 +20,13 @@ import (
 
 30
 832040
- */
+*/
 
 var dp [100]*big.Int
 
 func main() {
 	initdp()
 	reader := bufio.NewReader(os.Stdin)
-
 
 	for {
 		s, _ := reader.ReadString('\n')
@@ -51,9 +50,9 @@ func fibonacci(n int) *big.Int {
 	}
 
 	// cache solution
-	dp[n - 1] = fibonacci(n - 1)
-	dp[n - 2] = fibonacci(n - 2)
+	dp[n-1] = fibonacci(n - 1)
+	dp[n-2] = fibonacci(n - 2)
 	dp[n] = &big.Int{}
-	dp[n].Add(dp[n - 1], dp[n - 2])
+	dp[n].Add(dp[n-1], dp[n-2])
 	return dp[n]
 }

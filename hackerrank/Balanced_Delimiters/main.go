@@ -1,16 +1,16 @@
 /**
-  * Basic LIFO Stack
-  *
-  */
+ * Basic LIFO Stack
+ *
+ */
 
 package main
 
 import (
-	"fmt"
+	. "../../collection/go"
 	"bufio"
+	"fmt"
 	"os"
 	"strings"
-	. "../../collection/go"
 )
 
 /**
@@ -22,7 +22,7 @@ import (
 ([]
 [])
 ([})
- */
+*/
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)

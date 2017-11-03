@@ -2,16 +2,16 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
-	"fmt"
 )
 
 var in = bufio.NewScanner(os.Stdin)
 
 /**
-  *
-  */
+ *
+ */
 func main() {
 	in.Split(bufio.ScanWords)
 

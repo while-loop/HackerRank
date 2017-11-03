@@ -2,26 +2,26 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"bytes"
-	"strconv"
-	"sort"
 	"fmt"
+	"os"
+	"sort"
+	"strconv"
 	"strings"
 )
 
 /**
-  * https://open.kattis.com/contests/e3hoii/problems/busnumbers
-  */
+ * https://open.kattis.com/contests/e3hoii/problems/busnumbers
+ */
 func main564() {
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanWords)
 
-	in.Scan();
+	in.Scan()
 	N, _ := strconv.Atoi(in.Text())
 	arr := make([]int, N)
 	for i := 0; i < N; i++ {
-		in.Scan();
+		in.Scan()
 		arr[i], _ = strconv.Atoi(in.Text())
 	}
 
@@ -41,14 +41,14 @@ func Compress(arr []int) string {
 
 		if i == offset {
 			buf.WriteString(fmt.Sprintf("%d ", arr[i]))
-		} else if  offset-i == 1{
+		} else if offset-i == 1 {
 			buf.WriteString(fmt.Sprintf("%d ", arr[i]))
 			offset--
-		} else  {
+		} else {
 			buf.WriteString(fmt.Sprintf("%d-%d ", arr[i], arr[offset]))
 		}
 
-		i += offset-i+1
+		i += offset - i + 1
 	}
 
 	return strings.TrimSpace(buf.String())

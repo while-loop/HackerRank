@@ -2,17 +2,18 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"strconv"
 	"fmt"
+	"os"
 	"sort"
+	"strconv"
 )
 
 var in = bufio.NewScanner(os.Stdin)
 var FEE = 0.10
+
 /**
-  * https://open.kattis.com/contests/ze6qt6/problems/notamused
-  */
+ * https://open.kattis.com/contests/ze6qt6/problems/notamused
+ */
 func main() {
 	in.Split(bufio.ScanWords)
 

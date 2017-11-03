@@ -3,8 +3,8 @@ package collection
 import "errors"
 
 /**
-	Kinda generic Stack
- */
+Kinda generic Stack
+*/
 type Stack struct {
 	elements []interface{}
 }
@@ -17,7 +17,7 @@ func (this *Stack) Peek() (interface{}, error) {
 	if this.Empty() {
 		return nil, errors.New("Empty Stack")
 	} else {
-		return this.elements[len(this.elements) - 1], nil
+		return this.elements[len(this.elements)-1], nil
 	}
 }
 
@@ -40,7 +40,6 @@ func (this *Stack) Push(val interface{}) {
 func (this *Stack) Size() int {
 	return len(this.elements)
 }
-
 
 // https://groups.google.com/forum/#!topic/golang-nuts/UyKree3BCQ0
 type StringStack struct {

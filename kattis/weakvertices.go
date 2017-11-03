@@ -2,17 +2,17 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"strconv"
 	"fmt"
+	"os"
 	"sort"
+	"strconv"
 )
 
 var in = bufio.NewScanner(os.Stdin)
 
 /**
-  * https://open.kattis.com/contests/ze6qt6/problems/weakvertices
-  */
+ * https://open.kattis.com/contests/ze6qt6/problems/weakvertices
+ */
 func main() {
 	in.Split(bufio.ScanWords)
 

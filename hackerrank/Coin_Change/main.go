@@ -1,7 +1,7 @@
 /**
-  * Coin Change Dyn Prog
-  *
-  */
+ * Coin Change Dyn Prog
+ *
+ */
 
 package main
 
@@ -26,13 +26,13 @@ func main() {
 }
 
 func MakeChange(N, M int, Cs []int) int {
-	vals := make([]int, N + 1)
+	vals := make([]int, N+1)
 
 	vals[0] = 1 // base case
 
 	for i := 0; i < M; i++ {
 		for j := Cs[i]; j <= N; j++ {
-			vals[j] += vals[j - Cs[i]];
+			vals[j] += vals[j-Cs[i]]
 		}
 	}
 

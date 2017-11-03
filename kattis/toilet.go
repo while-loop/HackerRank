@@ -2,18 +2,18 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
+	"os"
 )
 
 /**
-  * https://open.kattis.com/contests/e3hoii/problems/toilet
-  */
+ * https://open.kattis.com/contests/e3hoii/problems/toilet
+ */
 func main5454() {
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanWords)
 
-	in.Scan();
+	in.Scan()
 	word := in.Text()
 
 	changes := make([]int, 3)

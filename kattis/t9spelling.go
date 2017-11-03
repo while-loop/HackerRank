@@ -2,21 +2,21 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"fmt"
 	"bytes"
-	"strings"
+	"fmt"
+	"os"
 	"strconv"
+	"strings"
 )
 
 /**
-  * https://open.kattis.com/contests/e3hoii/problems/t9spelling
-  */
+ * https://open.kattis.com/contests/e3hoii/problems/t9spelling
+ */
 func main() {
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanLines)
 
-	in.Scan();
+	in.Scan()
 	N, _ := strconv.Atoi(in.Text())
 	for i := 1; i <= N; i++ {
 		in.Scan()

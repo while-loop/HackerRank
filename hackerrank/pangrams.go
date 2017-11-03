@@ -1,13 +1,13 @@
 /**
-  * Set of all letters
-  *
-  */
+ * Set of all letters
+ *
+ */
 
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -25,9 +25,9 @@ func main() {
 			break
 		}
 
-		if t != ' '{
-			if 65 <= t && t <= 90{
-				t +=32
+		if t != ' ' {
+			if 65 <= t && t <= 90 {
+				t += 32
 			}
 			set[t] = true
 		}

@@ -2,24 +2,24 @@ package main
 
 import (
 	"bufio"
+	"bytes"
+	"fmt"
 	"os"
 	"strconv"
-	"fmt"
-	"bytes"
 )
 
 var in = bufio.NewScanner(os.Stdin)
 
 /**
-  * https://open.kattis.com/contests/ze6qt6/problems/wertyu
-  */
+ * https://open.kattis.com/contests/ze6qt6/problems/wertyu
+ */
 func main() {
 	in.Split(bufio.ScanLines)
 
 	for {
 		buf := bytes.Buffer{}
 		line := NextLine()
-		if line == ""{
+		if line == "" {
 			break
 		}
 		for i := 0; i < len(line); i++ {
@@ -34,7 +34,7 @@ func xform(char byte) byte {
 		return char - 1
 	} else {
 		l := CHARS[char]
-		if l == 0{
+		if l == 0 {
 			return char
 		} else {
 			return l
@@ -43,41 +43,41 @@ func xform(char byte) byte {
 }
 
 var CHARS = map[byte]byte{
-	'W': 'Q',
-	'E': 'W',
-	'R': 'E',
-	'T': 'R',
-	'Y': 'T',
-	'U': 'Y',
-	'I': 'U',
-	'O': 'I',
-	'P': 'O',
-	'[': 'P',
-	']': '[',
-	'\\':']',
-	'S': 'A',
-	'D': 'S',
-	'F': 'D',
-	'G': 'F',
-	'H': 'G',
-	'J': 'H',
-	'K': 'J',
-	'L': 'K',
-	';': 'L',
-	'\'':';',
-	'X': 'Z',
-	'C': 'X',
-	'V': 'C',
-	'B': 'V',
-	'N': 'B',
-	'M': 'N',
-	',': 'M',
-	'.': ',',
-	'/': '.',
-	'-': '0',
-	'=': '-',
-	'1': '`',
-	'0': '9',
+	'W':  'Q',
+	'E':  'W',
+	'R':  'E',
+	'T':  'R',
+	'Y':  'T',
+	'U':  'Y',
+	'I':  'U',
+	'O':  'I',
+	'P':  'O',
+	'[':  'P',
+	']':  '[',
+	'\\': ']',
+	'S':  'A',
+	'D':  'S',
+	'F':  'D',
+	'G':  'F',
+	'H':  'G',
+	'J':  'H',
+	'K':  'J',
+	'L':  'K',
+	';':  'L',
+	'\'': ';',
+	'X':  'Z',
+	'C':  'X',
+	'V':  'C',
+	'B':  'V',
+	'N':  'B',
+	'M':  'N',
+	',':  'M',
+	'.':  ',',
+	'/':  '.',
+	'-':  '0',
+	'=':  '-',
+	'1':  '`',
+	'0':  '9',
 }
 
 func NextInt() int {

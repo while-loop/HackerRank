@@ -1,17 +1,17 @@
 /**
-  * Iterative Factorial w/o memorization
-  *
-  */
+ * Iterative Factorial w/o memorization
+ *
+ */
 
 package main
 
 import (
-	"fmt"
 	"bufio"
-	"os"
-	"strings"
-	"strconv"
+	"fmt"
 	"math/big"
+	"os"
+	"strconv"
+	"strings"
 )
 
 /**
@@ -26,7 +26,7 @@ import (
 
 10
 3628800
- */
+*/
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)

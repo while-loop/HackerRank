@@ -1,16 +1,16 @@
 /**
-  * FiZzBuZz
-  *
-  */
+ * FiZzBuZz
+ *
+ */
 
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
-	"strings"
 	"strconv"
+	"strings"
 )
 
 /**
@@ -35,7 +35,7 @@ Fizz
 13
 14
 FizzBuzz
- */
+*/
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
@@ -54,14 +54,14 @@ func printFizzBuzz(arr []string) {
 func FiZzBuZz(n int) []string {
 	arr := make([]string, n)
 	for i := 1; i <= n; i++ {
-		if (i % 3 == 0 && i % 5 == 0) {
-			arr[i - 1] = "FizzBuzz"
-		} else if (i % 5 == 0) {
-			arr[i - 1] = "Buzz"
-		} else if (i % 3 == 0) {
-			arr[i - 1] = "Fizz"
+		if i%3 == 0 && i%5 == 0 {
+			arr[i-1] = "FizzBuzz"
+		} else if i%5 == 0 {
+			arr[i-1] = "Buzz"
+		} else if i%3 == 0 {
+			arr[i-1] = "Fizz"
 		} else {
-			arr[i - 1] = strconv.Itoa(i)
+			arr[i-1] = strconv.Itoa(i)
 		}
 	}
 	return arr

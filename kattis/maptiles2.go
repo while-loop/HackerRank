@@ -2,14 +2,14 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
 	"math"
+	"os"
 )
 
 /**
-  * https://open.kattis.com/contests/e3hoii/problems/maptiles2
-  */
+ * https://open.kattis.com/contests/e3hoii/problems/maptiles2
+ */
 func main() {
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanWords)
@@ -21,12 +21,12 @@ func main() {
 }
 
 func Key2Coord(key string) Coord {
-	coord := Coord{level:len(key)}
+	coord := Coord{level: len(key)}
 
 	x, y := 0.0, 0.0
 	for l := coord.level; l > 0; l-- {
-		num := float64(key[coord.level - l] - '0')
-		value := math.Pow(2, float64(l - 1))
+		num := float64(key[coord.level-l] - '0')
+		value := math.Pow(2, float64(l-1))
 		switch num {
 		case 0:
 			break

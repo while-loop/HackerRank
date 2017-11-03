@@ -1,16 +1,16 @@
 /**
-  * Recursive Fibonacci as per request of contest rules
-  *
-  */
+ * Recursive Fibonacci as per request of contest rules
+ *
+ */
 
 package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
-	"fmt"
 )
 
 /**
@@ -19,7 +19,7 @@ import (
 
 30
 832040
- */
+*/
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 

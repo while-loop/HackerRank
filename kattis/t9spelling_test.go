@@ -1,8 +1,8 @@
 package main
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestCase0(t *testing.T) {
@@ -34,5 +34,3 @@ func TestCase4(t *testing.T) {
 	exp := "99933777783377732999044409336680 0 086660844330 07777866677733"
 	assert.Equal(t, exp, Word2Nums(in), "FeelsUnluckyMan")
 }
-
-

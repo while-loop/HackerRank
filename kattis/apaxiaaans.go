@@ -2,19 +2,19 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"fmt"
 	"bytes"
+	"fmt"
+	"os"
 )
 
 /**
-  * https://open.kattis.com/contests/e3hoii/problems/apaxiaaans
-  */
+ * https://open.kattis.com/contests/e3hoii/problems/apaxiaaans
+ */
 func main85() {
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanWords)
 
-	in.Scan();
+	in.Scan()
 	word := in.Text()
 	fmt.Println(Apaxias(word))
 }

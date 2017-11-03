@@ -1,8 +1,8 @@
 package collection
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestQueue_EmptyQueueShouldBeZero(t *testing.T) {
@@ -131,4 +131,3 @@ func TestQueue_Resize(t *testing.T) {
 	assert.Equal(t, byte(0), val, "Popped wrong value")
 	assert.Equal(t, 32, queue.Size(), "Wrong size when popped")
 }
-

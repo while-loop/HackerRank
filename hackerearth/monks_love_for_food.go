@@ -1,19 +1,19 @@
 package main
 
 import (
+	"./../collection/go"
 	"bufio"
+	"bytes"
+	"fmt"
 	"os"
 	"strconv"
-	"fmt"
-	"bytes"
-	"./../collection/go"
 )
 
 var scanner *bufio.Scanner
 
 /**
-  * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/monks-love-for-food/
-  */
+ * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/monks-love-for-food/
+ */
 func erv() {
 	fmt.Print(SolveMonkFood(bufio.NewScanner(os.Stdin)))
 }
@@ -45,6 +45,7 @@ func SolveMonkFood(s *bufio.Scanner) string {
 }
 
 func readInt() int {
-	scanner.Scan(); queries, _ := strconv.Atoi(scanner.Text())
+	scanner.Scan()
+	queries, _ := strconv.Atoi(scanner.Text())
 	return queries
 }

@@ -2,15 +2,15 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
-	"strings"
+	"os"
 	"strconv"
+	"strings"
 )
 
 /**
-  * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/monk-and-welcome-problem/
-  */
+ * https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/monk-and-welcome-problem/
+ */
 func sdf() {
 	reader := bufio.NewReader(os.Stdin)
 
@@ -25,6 +25,6 @@ func sdf() {
 	for i := 0; i < n; i++ {
 		l, _ := strconv.Atoi(strings.TrimSpace(a[i]))
 		r, _ := strconv.Atoi(strings.TrimSpace(b[i]))
-		fmt.Print(l + r, " ")
+		fmt.Print(l+r, " ")
 	}
 }
