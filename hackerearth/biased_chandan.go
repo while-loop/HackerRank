@@ -1,11 +1,12 @@
 package main
 
 import (
-	"../collection/go"
 	"bufio"
 	"fmt"
 	"os"
 	"strconv"
+
+	"github.com/while-loop/competitive-programming/collection/go"
 )
 
 /**
@@ -37,7 +38,7 @@ func SolveBias(scanner *bufio.Scanner) int {
 	return sum(stack)
 }
 
-func sum(s Stack) int {
+func sum(s collection.Stack) int {
 	sum := 0
 	for !s.Empty() {
 		a, _ := s.Pop()

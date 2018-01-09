@@ -1,12 +1,13 @@
 package main
 
 import (
-	"../collection/go"
 	"bufio"
 	"fmt"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/while-loop/competitive-programming/collection/go"
 )
 
 /**

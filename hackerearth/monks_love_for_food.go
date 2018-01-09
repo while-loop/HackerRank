@@ -1,12 +1,13 @@
 package main
 
 import (
-	"./../collection/go"
 	"bufio"
 	"bytes"
 	"fmt"
 	"os"
 	"strconv"
+
+	"github.com/while-loop/competitive-programming/collection/go"
 )
 
 var scanner *bufio.Scanner
