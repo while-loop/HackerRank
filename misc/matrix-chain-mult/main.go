@@ -9,6 +9,7 @@ import (
 )
 
 var in = bufio.NewScanner(os.Stdin)
+var store = map[string]int{}
 
 // https://www.geeksforgeeks.org/dynamic-programming-set-8-matrix-chain-multiplication/
 func main() {
@@ -32,6 +33,10 @@ func matrixChainOrder(matrix []int, start, end int) int {
 		return 0
 	}
 
+	if calcs, exists := store[fmt.Sprintf("%d%d", start, end)]; exists {
+		return calcs
+	}
+
 	min := math.MaxInt32
 	for i := start; i < end; i++ {
 		if calcs := (matrix[start-1] * matrix[i] * matrix[end]) +
@@ -41,6 +46,7 @@ func matrixChainOrder(matrix []int, start, end int) int {
 		}
 	}
 
+	store[fmt.Sprintf("%d%d", start, end)] = min
 	return min
 }
 

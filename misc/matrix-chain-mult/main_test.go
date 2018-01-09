@@ -25,3 +25,9 @@ func TestCases(t *testing.T) {
 		})
 	}
 }
+
+func TestDP(t *testing.T) {
+	arr := []int{10, 20, 30, 40, 30, 10, 20, 30, 40, 30, 40, 30, 40, 40, 30, 10, 20, 30, 40, 30}
+	calcs := 161000
+	assert.Equal(t, calcs, MatrixChainOrder(arr))
+}
