@@ -2,14 +2,11 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 	"strconv"
 )
 
-/**
- *
- */
+//
 func main() {
 	in.Split(bufio.ScanWords)
 
@@ -17,20 +14,25 @@ func main() {
 	for i := 0; i < N; i++ {
 
 	}
-	fmt.Println(N)
 }
 
 var in = bufio.NewScanner(os.Stdin)
 
 func nextInt() int {
 	in.Scan()
-	tmp, _ := strconv.Atoi(in.Text())
+	tmp, err := strconv.Atoi(in.Text())
+	if err != nil {
+		panic(err)
+	}
 	return tmp
 }
 
 func nextFloat64() float64 {
 	in.Scan()
-	tmp, _ := strconv.ParseFloat(in.Text(), 64)
+	tmp, err := strconv.ParseFloat(in.Text(), 64)
+	if err != nil {
+		panic(err)
+	}
 	return tmp
 }
 
