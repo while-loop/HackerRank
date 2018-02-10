@@ -6,10 +6,12 @@ import (
 	"strconv"
 )
 
+func init() {
+	in.Split(bufio.ScanWords)
+}
+
 //
 func main() {
-	in.Split(bufio.ScanWords)
-
 	N := nextInt()
 	for i := 0; i < N; i++ {
 
