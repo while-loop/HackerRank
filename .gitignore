@@ -10,7 +10,7 @@ out/
 # User-specific stuff:
 .idea/workspace.xml
 .idea/tasks.xml
-
+debug
 # Sensitive or high-churn files:
 .idea/dataSources/
 .idea/dataSources.ids
